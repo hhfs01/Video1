@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Professional Video Download</title>
+  <style>
+    * {https://drive.google.com/file/d/18tPCrqvDY1-l8f3urOHrp3Ze1Abxb5pJ/view?usp=sharing
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      max-width: 400px;
+      width: 90%;
+    }
+
+    .video-icon {
+      font-size: 4rem;
+      margin-bottom: 1rem;
+      display: block;
+      animation: pulse 2s infinite;
+    }
+
+    .title {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: #666;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+    }
+
+    .download-btn {
+      position: relative;
+      padding: 18px 40px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: white;
+      background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-width: 200px;
+      margin: 0 auto;
+    }
+
+    .download-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transition: left 0.5s;
+    }
+
+    .download-btn:hover::before {
+      left: 100%;
+    }
+
+    .download-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+    }
+
+    .download-btn:active {
+      transform: translateY(-1px);
+    }
+
+    .download-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .download-icon {
+      font-size: 1.2rem;
+    }
+
+    .progress-bar {
+      width: 100%;
+      height: 4px;
+      background: #f0f0f0;
+      border-radius: 2px;
+      margin-top: 1rem;
+      overflow: hidden;
+      display: none;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .status-text {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #666;
+      min-height: 20px;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      animation: fadeIn 0.8s ease-out;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 2rem;
+        margin: 1rem;
+      }
+      
+      .title {
+        font-size: 1.5rem;
+      }
+      
+      .download-btn {
+        padding: 16px 32px;
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+      <div class="container">
+      <span class="video-icon">🎬</span>
+      <h1 class="title">Watch Video Online</h1>
+      <p class="subtitle">Click the button below to watch your video directly</p>
+      
+      <button class="download-btn" onclick="watchVideo()" id="downloadBtn">
+        <span class="download-icon">▶️</span>
+        Watch Video
+      </button>
+      
+      <div class="progress-bar" id="progressBar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      
+      <div class="status-text" id="statusText"></div>
+    </div>
+
+  <script>
+    function watchVideo() {
+      const btn = document.getElementById('downloadBtn');
+      const progressBar = document.getElementById('progressBar');
+      const progressFill = document.getElementById('progressFill');
+      const statusText = document.getElementById('statusText');
+      
+      // Disable button and show progress
+      btn.disabled = true;
+      btn.innerHTML = '<span class="download-icon">⏳</span> Opening...';
+      progressBar.style.display = 'block';
+      statusText.textContent = 'Preparing video player...';
+      
+      // Google Drive video link for online viewing
+      const googleDriveUrl = 'https://drive.google.com/file/d/18tPCrqvDY1-l8f3urOHrp3Ze1Abxb5pJ/view?usp=sharing';
+      
+      // Simulate loading progress
+      let progress = 0;
+      const interval = setInterval(() => {
+        progress += Math.random() * 20;
+        if (progress > 100) progress = 100;
+        
+        progressFill.style.width = progress + '%';
+        
+        if (progress >= 100) {
+          clearInterval(interval);
+          statusText.textContent = 'Video opened successfully!';
+          
+          // Open Google Drive video in new tab for online viewing
+          const link = document.createElement('a');
+          link.href = googleDriveUrl;
+          link.target = '_blank';
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+          
+          // Reset button after a delay
+          setTimeout(() => {
+            btn.disabled = false;
+            btn.innerHTML = '<span class="download-icon">▶️</span> Watch Video';
+            progressBar.style.display = 'none';
+            progressFill.style.width = '0%';
+            statusText.textContent = '';
+          }, 2000);
+        } else {
+          statusText.textContent = `Loading video... ${Math.round(progress)}%`;
+        }
+      }, 150);
+    }
+  </script>
+
+</body>
+</html> 
