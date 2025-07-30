@@ -5,70 +5,262 @@
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  height: 100vh;
+  font-family: 'Vazirmatn', 'Noto Nastaliq Urdu', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #8B4513 0%, #D2691E 25%, #F4A460 50%, #DEB887 75%, #F5DEB3 100%);
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  padding: 20px;
+  direction: rtl;
 }
 
 .container {
   text-align: center;
-  background: rgba(255, 255, 255, 0.95);
+  background: linear-gradient(145deg, #FFF8DC, #FDF5E6);
   padding: 3rem;
-  border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 25px;
+  box-shadow: 
+    0 20px 40px rgba(139, 69, 19, 0.2),
+    0 0 0 3px #D2691E,
+    0 0 0 6px #F4A460,
+    0 0 0 9px #DEB887;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  max-width: 400px;
-  width: 90%;
-  animation: fadeIn 0.8s ease-out;
-}
-
-.video-icon {
-  font-size: 4rem;
-  margin-bottom: 1rem;
-  display: block;
-  animation: pulse 2s infinite;
-}
-
-.title {
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: #333;
-  margin-bottom: 0.5rem;
-}
-
-.subtitle {
-  color: #666;
-  margin-bottom: 2rem;
-  font-size: 1rem;
-}
-
-.download-btn {
+  max-width: 800px;
+  width: 100%;
+  animation: fadeIn 1s ease-out;
   position: relative;
-  padding: 18px 40px;
+  overflow: hidden;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23D2691E" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  pointer-events: none;
+  border-radius: 25px;
+}
+
+/* Header Section */
+.header-section {
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.ornament-top, .ornament-bottom {
+  font-size: 1.5rem;
+  color: #8B4513;
+  margin: 1rem 0;
+  animation: sparkle 2s infinite;
+}
+
+.welcome-title {
+  font-family: 'Noto Nastaliq Urdu', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #8B4513;
+  text-shadow: 2px 2px 4px rgba(139, 69, 19, 0.3);
+  margin: 1rem 0;
+  background: linear-gradient(45deg, #8B4513, #D2691E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Recipe Section */
+.recipe-section {
+  text-align: right;
+  margin-bottom: 2rem;
+}
+
+.recipe-title {
+  font-family: 'Noto Nastaliq Urdu', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #8B4513;
+  margin-bottom: 2rem;
+  text-align: center;
+  background: linear-gradient(45deg, #8B4513, #D2691E);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #8B4513;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.ingredients-list {
+  background: linear-gradient(145deg, #FFF8DC, #FDF5E6);
+  border: 2px solid #DEB887;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 5px 15px rgba(139, 69, 19, 0.1);
+}
+
+.ingredient-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.ingredient-item:hover {
+  transform: translateX(-5px);
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.ingredient-number {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #D2691E;
+  margin-left: 1rem;
+  min-width: 2rem;
+}
+
+.ingredient-text {
   font-size: 1.1rem;
+  color: #8B4513;
+  font-weight: 500;
+}
+
+.preparation-steps {
+  background: linear-gradient(145deg, #FDF5E6, #FFF8DC);
+  border: 2px solid #F4A460;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 15px rgba(139, 69, 19, 0.1);
+}
+
+.step-text {
+  font-size: 1.1rem;
+  color: #8B4513;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+  text-align: center;
+}
+
+/* Consumption Section */
+.consumption-section {
+  margin-bottom: 2rem;
+}
+
+.morning-section, .evening-section {
+  background: linear-gradient(145deg, #FFF8DC, #FDF5E6);
+  border: 2px solid #DEB887;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 5px 15px rgba(139, 69, 19, 0.1);
+}
+
+.consumption-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #8B4513;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.consumption-text {
+  font-size: 1.1rem;
+  color: #8B4513;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+.morning-ingredients {
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 10px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.morning-ingredients p {
+  font-size: 1.1rem;
+  color: #8B4513;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.benefit-text {
+  font-size: 1.1rem;
+  color: #D2691E;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: rgba(210, 105, 30, 0.1);
+  border-radius: 10px;
+}
+
+/* Closing Section */
+.closing-section {
+  background: linear-gradient(145deg, #FDF5E6, #FFF8DC);
+  border: 2px solid #F4A460;
+  border-radius: 15px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 15px rgba(139, 69, 19, 0.1);
+}
+
+.closing-text {
+  font-size: 1.2rem;
+  color: #8B4513;
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.thank-you {
+  font-size: 1.3rem;
+  color: #D2691E;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Video Section */
+.video-section {
+  text-align: center;
+}
+
+.video-btn {
+  position: relative;
+  padding: 20px 40px;
+  font-size: 1.2rem;
   font-weight: 600;
   color: white;
-  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  background: linear-gradient(45deg, #8B4513, #D2691E);
   border: none;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
-  min-width: 200px;
+  gap: 15px;
+  min-width: 300px;
   margin: 0 auto;
+  font-family: 'Vazirmatn', sans-serif;
 }
 
-.download-btn::before {
+.video-btn::before {
   content: '';
   position: absolute;
   top: 0;
@@ -79,34 +271,34 @@ body {
   transition: left 0.5s;
 }
 
-.download-btn:hover::before {
+.video-btn:hover::before {
   left: 100%;
 }
 
-.download-btn:hover {
+.video-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+  box-shadow: 0 12px 35px rgba(139, 69, 19, 0.4);
 }
 
-.download-btn:active {
+.video-btn:active {
   transform: translateY(-1px);
 }
 
-.download-btn:disabled {
+.video-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
   transform: none;
 }
 
-.download-icon {
-  font-size: 1.2rem;
+.video-icon {
+  font-size: 1.5rem;
 }
 
 .progress-bar {
   width: 100%;
-  height: 4px;
-  background: #f0f0f0;
-  border-radius: 2px;
+  height: 6px;
+  background: #F4A460;
+  border-radius: 3px;
   margin-top: 1rem;
   overflow: hidden;
   display: none;
@@ -114,31 +306,35 @@ body {
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+  background: linear-gradient(45deg, #8B4513, #D2691E);
   width: 0%;
   transition: width 0.3s ease;
 }
 
 .status-text {
   margin-top: 1rem;
-  font-size: 0.9rem;
-  color: #666;
+  font-size: 1rem;
+  color: #8B4513;
   min-height: 20px;
+  font-weight: 500;
 }
 
-@keyframes pulse {
+/* Animations */
+@keyframes sparkle {
   0%, 100% {
+    opacity: 0.7;
     transform: scale(1);
   }
   50% {
-    transform: scale(1.05);
+    opacity: 1;
+    transform: scale(1.1);
   }
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(30px);
   }
   to {
     opacity: 1;
@@ -146,18 +342,56 @@ body {
   }
 }
 
-@media (max-width: 480px) {
+/* Responsive Design */
+@media (max-width: 768px) {
   .container {
     padding: 2rem;
     margin: 1rem;
   }
   
-  .title {
-    font-size: 1.5rem;
+  .welcome-title {
+    font-size: 2.5rem;
   }
   
-  .download-btn {
-    padding: 16px 32px;
+  .recipe-title {
+    font-size: 2rem;
+  }
+  
+  .video-btn {
+    padding: 18px 32px;
+    font-size: 1.1rem;
+    min-width: 250px;
+  }
+  
+  .ingredient-text {
     font-size: 1rem;
+  }
+  
+  .consumption-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1.5rem;
+  }
+  
+  .welcome-title {
+    font-size: 2rem;
+  }
+  
+  .recipe-title {
+    font-size: 1.8rem;
+  }
+  
+  .video-btn {
+    padding: 16px 28px;
+    font-size: 1rem;
+    min-width: 200px;
+  }
+  
+  .ingredients-list, .preparation-steps, .morning-section, .evening-section, .closing-section {
+    padding: 1rem;
   }
 } 
