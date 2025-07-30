@@ -6,9 +6,9 @@ function watchVideo() {
   
   // Disable button and show progress
   btn.disabled = true;
-  btn.innerHTML = '<span class="download-icon">⏳</span> Opening...';
+  btn.innerHTML = '<span class="video-icon">⏳</span> در حال بارگذاری...';
   progressBar.style.display = 'block';
-  statusText.textContent = 'Preparing video player...';
+  statusText.textContent = 'در حال آماده‌سازی پخش‌کننده ویدیو...';
   
   // Google Drive video link for online viewing
   const googleDriveUrl = 'https://drive.google.com/file/d/18tPCrqvDY1-l8f3urOHrp3Ze1Abxb5pJ/view?usp=sharing';
@@ -23,7 +23,7 @@ function watchVideo() {
     
     if (progress >= 100) {
       clearInterval(interval);
-      statusText.textContent = 'Video opened successfully!';
+      statusText.textContent = 'ویدیو با موفقیت باز شد!';
       
       // Open Google Drive video in new tab for online viewing
       const link = document.createElement('a');
@@ -36,13 +36,13 @@ function watchVideo() {
       // Reset button after a delay
       setTimeout(() => {
         btn.disabled = false;
-        btn.innerHTML = '<span class="download-icon">▶️</span> Watch Video';
+        btn.innerHTML = '<span class="video-icon">🎥</span> مشاهده ویدیو طرز تهیه معجون';
         progressBar.style.display = 'none';
         progressFill.style.width = '0%';
         statusText.textContent = '';
       }, 2000);
     } else {
-      statusText.textContent = `Loading video... ${Math.round(progress)}%`;
+      statusText.textContent = `در حال بارگذاری ویدیو... ${Math.round(progress)}%`;
     }
   }, 150);
 } 
