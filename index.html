@@ -1,27 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Professional Video Download</title>
+  <title>طرز تهیه معجون طبیعی</title>
   <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu:wght@400;700&family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
-    <span class="video-icon">🎬</span>
-    <h1 class="title">Watch Video Online</h1>
-    <p class="subtitle">Click the button below to watch your video directly</p>
-    
-    <button class="download-btn" onclick="watchVideo()" id="downloadBtn">
-      <span class="download-icon">▶️</span>
-      Watch Video
-    </button>
-    
-    <div class="progress-bar" id="progressBar">
-      <div class="progress-fill" id="progressFill"></div>
+    <!-- Header Section -->
+    <div class="header-section">
+      <div class="ornament-top">❁ ❁ ❁</div>
+      <h1 class="welcome-title">خوش آمد </h1>
+      <div class="ornament-bottom">❁ ❁ ❁</div>
     </div>
-    
-    <div class="status-text" id="statusText"></div>
+
+    <!-- Main Recipe Section -->
+    <div class="recipe-section">
+      <h2 class="recipe-title">طرز تهیه معجون طبیعی</h2>
+      
+      <div class="ingredients-section">
+        <h3 class="section-title">🔸 اینک فرمایش شما عزیزان ترتیب و تنظیم شد:</h3>
+        
+        <div class="ingredients-list">
+          <div class="ingredient-item">
+            <span class="ingredient-number">۱.</span>
+            <span class="ingredient-text">سرکه سیب طبیعی – پنجصد سی‌سی</span>
+          </div>
+          <div class="ingredient-item">
+            <span class="ingredient-number">۲.</span>
+            <span class="ingredient-text">آب لیموی تازه خالص – پنج قاشق ماست‌خوری</span>
+          </div>
+          <div class="ingredient-item">
+            <span class="ingredient-number">۳.</span>
+            <span class="ingredient-text">آب زنجبیل تازه (از تراش کشیده‌شده) – پنج قاشق ماست‌خوری</span>
+          </div>
+          <div class="ingredient-item">
+            <span class="ingredient-number">۴.</span>
+            <span class="ingredient-text">پودر دارچین – دو قاشق ماست‌خوری</span>
+          </div>
+          <div class="ingredient-item">
+            <span class="ingredient-number">۵.</span>
+            <span class="ingredient-text">مرچ سیاه (فلفل سیاه) – دو قاشق ماست‌خوری</span>
+          </div>
+        </div>
+
+        <div class="preparation-steps">
+          <p class="step-text">🔹 همه پنج قلم را با هم مخلوط نموده و خوب حل نمایید.</p>
+          <p class="step-text">🔹 بعد از ۱۲ ساعت، محلول به صورت کامل حل شده و قابل میل کردن می‌باشد.</p>
+        </div>
+      </div>
+
+      <div class="consumption-section">
+        <div class="morning-section">
+          <h3 class="consumption-title">☀️ روش مصرف صبحگاهی:</h3>
+          <p class="consumption-text">
+            قبل از چای صبحانه، دو قاشق ماست‌خوری از این ترکیب را در یک گیلاس آب‌خوری ولرم معمولی یا معدنی (تصفیه‌شده) بریزید. سپس:
+          </p>
+          <div class="morning-ingredients">
+            <p>• یک قاشق ماست‌خوری چیا در ابتدا اضافه کنید تا خوب حل گردد</p>
+            <p>• یک قاشق ماست‌خوری عسل خالص</p>
+          </div>
+          <p class="consumption-text">
+            به آن اضافه کرده، خوب مخلوط نمایید و مانند یک جوس ترکیبی نوش جان کنید.
+          </p>
+          <p class="benefit-text">🕰️ این نوشیدنی شما را تا ۶ ساعت سیر و بی‌اشتها نگه می‌دارد و تأثیرات مثبت بر بدن دارد.</p>
+        </div>
+
+        <div class="evening-section">
+          <h3 class="consumption-title">🌙 روش مصرف شبانه:</h3>
+          <p class="consumption-text">قبل از خواب، یک گیلاس از همین ترکیب را بدون چیا میل نمایید.</p>
+        </div>
+      </div>
+
+      <div class="closing-section">
+        <p class="closing-text">💬 ان‌شاءالله که مفید و مؤثر خواهد بود و از شما دعای خیر می‌طلبیم.</p>
+        <p class="thank-you">تشکر ❤️</p>
+      </div>
+    </div>
+
+    <!-- Video Button Section -->
+    <div class="video-section">
+      <button class="video-btn" onclick="watchVideo()" id="downloadBtn">
+        <span class="video-icon">🎥</span>
+        مشاهده ویدیو طرز تهیه معجون
+      </button>
+      
+      <div class="progress-bar" id="progressBar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      
+      <div class="status-text" id="statusText"></div>
+    </div>
   </div>
 
   <script src="script.js"></script>
